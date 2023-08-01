@@ -11,13 +11,15 @@ class HospitalPatient(models.Model):
     age = fields.Integer(string='Age', tracking=True)
     is_child = fields.Boolean(string='Is Child ?', tracking=True)
     notes = fields.Text(string='Notes')
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')], string='Gender', tracking=True)
+    gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')], string='Gender',
+                              tracking=True)
     capitilized_name = fields.Char(string='Capitalized name', compute='_compute_capitilized_name', store=True)
+    ref = fields.Char(string='Reference', default=lambda self: _('New'))
 
     @api.model_create_multi
     def create(self, val_list):
-        for record in val_list:
-            record['gender'] = 'female'
+        for vals in val_list:
+            vals['ref'] = self.env['ir.sequence'].next_by_code('hospital.patient')
         return super(HospitalPatient, self).create(val_list)
 
     @api.constrains('is_child', 'age')
@@ -40,4 +42,3 @@ class HospitalPatient(models.Model):
             self.is_child = True
         else:
             self.is_child = False
-

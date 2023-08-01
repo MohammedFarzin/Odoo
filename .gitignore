@@ -1,1 +1,5 @@
 venv/
+odoo/
+custom/
+conf/
+.idea/

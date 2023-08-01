@@ -6,6 +6,11 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="om_title">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
                     <group>
                         <field name="name"/>
                         <field name="is_child"/>
@@ -15,7 +20,7 @@
                     </group>
                     <div class="oe_chatter">
                         <field name="message_follower_ids"/>
-                        <field name="message_ids"  options="{'post_refresh': 'recipients'}"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
                     </div>
                 </sheet>
             </form>
@@ -26,6 +31,7 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="ref"/>
                 <field name="name"/>
                 <field name="age"/>
                 <field name="gender"/>
@@ -33,12 +39,36 @@
             </tree>
         </field>
     </record>
+
+    <record id="view_hospitaL_patient_search" model="ir.ui.view">
+        <field name="name">hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self)]"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]"/>
+                <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]"/>
+                <filter name="filter_others" string="Others" domain="[('gender', '=', 'others')]"/>
+                <separator/>
+                <filter name="filter_child" string="Is Child" domain="[('is_child', '=', True)]"/>
+                <group expand="1" string="Group by">
+                    <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
     <record id="action_hospital_patient" model="ir.actions.act_window">
         <field name="name">Patient</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="om_hospital.view_hospitaL_patient_search"/>
     </record>
+
     <menuitem id="meny_hospital_patients"
               name="Patients"
               parent="meny_hospital_operations"

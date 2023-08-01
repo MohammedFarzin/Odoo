@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8d09dd9-918a-4e98-a08a-1e53bd493899" name="Changes" comment="" />
+    <list default="true" id="c8d09dd9-918a-4e98-a08a-1e53bd493899" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Certificate_Verification/conf/odoo.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom/dev/om_hospital/data/sequence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Certificate_Verification/odoo/debian/odoo.conf" beforeDir="false" afterPath="$PROJECT_DIR$/Certificate_Verification/odoo/debian/source/odoo.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/dev/om_hospital/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom/dev/om_hospital/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/dev/om_hospital/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom/dev/om_hospital/models/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/dev/om_hospital/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom/dev/om_hospital/views/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/dev/om_hospital/views/patient.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom/dev/om_hospital/views/patient.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/odoo" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,10 +38,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Odoo/odoo",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "last_opened_file_path": "D:/Odoo/Certificate_Verification",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -89,6 +100,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Learning/odoo" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
